@@ -10,12 +10,15 @@
 
 <h1 class="mb-4 mt-4">{{title}}</h1>
 
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-        <h5>Task adicionada com sucesso!</h5>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+@if(old('notification'))
+    
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <h5>Task adicionada com sucesso!</h5>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+@endif
 
 <div class="list-group">
   @if(tasks.length == undefined)
@@ -32,6 +35,8 @@
     @each(item in tasks)
       <a href="#" class="list-group-item list-group-item-action ">
         {{item.title}}
+        <br />
+        Descrição: {{item.body}}
       </a>
     @endeach     
   </div>

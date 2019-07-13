@@ -5,6 +5,8 @@
 
 <form action="{{ route('/add') }}" method="POST">
 
+     {{ csrfField() }}
+
     <div class="mb-3">
         <label for="">Title</label>
         <input type="text" name="title" id="name" placeholder="Your title" value="" class="form-control is-invalid">
