@@ -1,0 +1,30 @@
+@layout('main')
+@section('content')
+
+<h1 class="mb-4 mt-4">Add</h1>
+
+<form action="{{ route('/add') }}" method="POST">
+
+    <div class="mb-3">
+        <label for="">Title</label>
+        <input type="text" name="title" id="name" placeholder="Your title" value="" class="form-control is-invalid">
+        <div class="invalid-feedback">
+            Erro!
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="">Content</label>
+        <textarea type="text" name="body" id="body" placeholder="Content" value="" class="form-control is-invalid"></textarea>
+        <div class="invalid-feedback">
+            Erro!
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-dark db">
+        New task
+    </button>
+
+</form>
+
+@endsection

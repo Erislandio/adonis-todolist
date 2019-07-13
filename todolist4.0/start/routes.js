@@ -18,3 +18,4 @@ const Route = use("Route");
 
 Route.on("/").render("home");
 Route.on("/tasks").render("task");
+Route.on("/add").render("add");
