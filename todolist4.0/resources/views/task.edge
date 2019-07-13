@@ -1,5 +1,13 @@
 @layout('main')
 @section('content')
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Tasks</li>
+    </ol>
+  </nav>
+
 <h1 class="mb-4 mt-4">{{title}}</h1>
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -10,6 +18,17 @@
       </div>
 
 <div class="list-group">
+  @if(tasks.length == undefined)
+  <div class="jumbotron">
+      <h1 class="display-4">Ops!</h1>
+      <p class="lead">Parece que voce ainda não possui nenhuma Task</p>
+      <hr class="my-4">
+      <p>Clique no botão abaixo para adicionar uma nova Tarefa.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/add" role="button">Add Task</a>
+      </p>
+    </div>
+  @endif
     @each(item in tasks)
       <a href="#" class="list-group-item list-group-item-action ">
         {{item.title}}
