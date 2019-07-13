@@ -26,7 +26,7 @@ class TaskController {
     ];
 
     return view.render("task", {
-      title: "Your tasks",
+      title: "Latest tasks",
       tasks: tasks
     });
   }
