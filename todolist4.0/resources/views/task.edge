@@ -13,14 +13,14 @@
 @if(old('notification'))
     
   <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <h5>Task adicionada com sucesso!</h5>
+      {{old('notification')}}
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
   </div>
 @endif
 
-<div class="list-group">
+<div class="list-group mb-4">
   @if(tasks.length == undefined)
   <div class="jumbotron">
       <h1 class="display-4">Ops!</h1>

@@ -20,6 +20,8 @@ class TaskController {
 
     await task.save();
 
+    session.flash({notification: "Tasks Added!"})
+
     return response.redirect("/tasks");
   }
 }
